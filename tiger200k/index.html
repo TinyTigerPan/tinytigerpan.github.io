@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐯Tiger200K</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            text-align: justify; 
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            text-align: center; 
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .abstract {
+            background-color: #1e1e1e;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 4px solid #4a80f0;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center; 
+            gap: 15px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-github {
+            background-color: #24292e;
+            color: white;
+        }
+        
+        .btn-github:hover {
+            background-color: #2d3339;
+        }
+        
+        .btn-huggingface {
+            background-color: #ffd21f;
+            color: #121212;
+        }
+        
+        .btn-huggingface:hover {
+            background-color: #ffe05e;
+        }
+        
+        .btn-paper {
+            background-color: #4a80f0;
+            color: white;
+        }
+        
+        .btn-paper:hover {
+            background-color: #5d90f5;
+        }
+        
+        .btn-dataset {
+            background-color: #6c5ce7;
+            color: white;
+        }
+        
+        .btn-dataset:hover {
+            background-color: #7d6df0;
+        }
+        
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+        .video-gallery-2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .video-gallery-4 {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+        
+        .video-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .video-thumbnail {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.01);
+        }
+        
+        .video-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        .video-item:hover .video-caption {
+            transform: translateY(0);
+        }
+        
+        .pipeline-section {
+            margin-bottom: 60px;
+            text-align: center; /* pipeline部分内容居中 */
+        }
+        
+        .pipeline-image {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 8px;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            display: block;
+        }
+        
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .stat-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        @media (max-width: 1024px) {
+            .video-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-section {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .video-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐯 Tiger200K: Manually Curated High Visual <br> Quality Video Datasets from UGC Platform</h1>
+
+        <h3>Xianpan Zhou</h3>
+        <p style="text-align: center;">zhouxianpan@qq.com<p>
+        <div class="buttons">
+            <a href="#" class="btn btn-paper">Arxiv</a>
+            <a href="#" class="btn btn-huggingface">HuggingFace</a>
+            <a href="#" class="btn btn-github">GitHub</a>
+        </div>
+        
+        <div class="abstract">
+            <h2>Abstract</h2>
+            <p>The recent surge in open-source text-to-video generation models has significantly energized the research community, yet their dependence on proprietary training datasets remains a key constraint. While existing open datasets like Koala-36M employ algorithmic filtering of web-scraped videos from early platforms, they still lack the quality required for fine-tuning advanced video generation models.
+                We present Tiger200K, a manually curated high visual quality video dataset sourced from User-Generated Content (UGC) platforms. By prioritizing visual fidelity and aesthetic quality, Tiger200K underscores the critical role of human expertise in data curation, and providing high-quality, temporally consistent video-text pairs for fine-tuning and optimizing video generation architectures through a simple but effective pipeline including shot boundary detection, OCR, border detecting, motion filter and fine bilingual caption.
+                The dataset will undergo ongoing expansion and be released as an open-source initiative to advance research and applications in video generative models. </p>
+        </div>
+        
+        <h2>Visualization</h2>
+        <div class="video-gallery">
+            <!-- 第一行 -->
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1bh4y1e7Ky_scene_058_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-caption">视频中，一位年轻男子坐在一个装饰有书架的室内环境中。他穿着黑色T恤，戴着眼镜，表情专注，似乎在认真地听别人说话或思考某件事情。背景中的书架上摆放着许多书籍，营造出一种学术和知识的氛围。男子的姿态和表情显示出他在进行某种对话或讨论。<br> The video features a person sitting in what appears to be a studio or interview setting. The individual is wearing a black shirt and glasses, and they seem to be engaged in a conversation or interview. The background includes bookshelves filled with books, suggesting an intellectual or academic environment. The lighting is warm and focused on the person, highlighting their facial expressions and gestures as they speak. The overall atmosphere is calm and professional.</div>
+            </div>
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1PMANe9EDV_scene_044_cut_002_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-caption">这段视频展示了一个火山口内部的景象，火山口内充满了炽热的熔岩。熔岩呈现出明亮的橙红色，表面不断翻滚和涌动，散发出强烈的光芒。火山口边缘有部分熔岩溢出，形成了流动的熔岩流。火山口上方有大量的烟雾和蒸汽升起，整个场景显得非常壮观和震撼。背景是黑暗的火山岩壁，突显了熔岩的亮度和热度。<br>The video captures a dramatic scene of a volcanic eruption. Bright, fiery lava is seen flowing and bubbling intensely from the volcano's crater, illuminating the surrounding area with its intense orange and red glow. Thick plumes of smoke rise into the air, adding to the sense of power and intensity. The lava appears to be moving dynamically, creating a mesmerizing display of nature's raw energy. The overall atmosphere is one of awe and danger, highlighting the unpredictable and powerful forces at play during such an event.</div>
+            </div>
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1PU4y177Q3_scene_004_cut_003_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-caption">视频中展示了两只猫，一只成年猫和一只小猫，它们坐在一块编织的垫子上。成年猫是橙白相间的，而小猫则是纯白色的。成年猫低头看着小猫，似乎在与它互动或照顾它。背景模糊，但可以看出是在户外，可能是一个市场或街道的场景。整体氛围温馨，展现了猫咪之间的亲密关系。<br>The video shows two cats, an adult and a kitten, sitting on a small woven mat. The adult cat is orange and white, while the kitten is mostly white with some orange patches. They appear to be in a relaxed setting, possibly outdoors, as there is a metal container nearby and a blurred background that suggests an open area. The adult cat seems to be grooming itself, while the kitten looks up at it, possibly observing or interacting with the adult. The scene conveys a sense of calm and companionship between the two cats.</div>
+            </div>
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1T3i6YsEEV_scene_021_cut_002_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-caption">视频展示了一架红色的水上飞机在冰川上空飞行的场景。背景是壮丽的冰川和雪山，冰川呈现出蓝色和白色的层次，水面平静如镜，反射出周围的景色。飞机从画面左侧飞向右侧，逐渐远离镜头，显示出广阔的自然景观。整个画面给人一种宁静而壮观的感觉。<br>The video shows a red seaplane flying low over a large glacier in a serene, icy landscape. The glacier is surrounded by calm waters and rugged mountains in the background. The plane appears to be gliding smoothly, providing a stunning aerial view of the natural beauty of the area. The scene captures the contrast between the vibrant red of the plane and the cool blues and whites of the ice and water.</div>
+            </div>
+            
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1Yp4y1b7no_scene_003_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-caption">视频展示了一位穿着粉色服装的女性在花园中跳舞。她身穿一件带有白色装饰的粉色连衣裙，头戴粉色发饰，脚穿银色高跟鞋。她的舞蹈动作优雅流畅，手臂和身体随着音乐节奏摆动。背景是一个充满绿色植物和粉色花朵的美丽花园，环境宁静而自然，给人一种轻松愉快的感觉。<br>The video features a person dressed in a pink and white outfit, performing a graceful dance in a garden setting. The dancer is adorned with floral accessories and has long, flowing hair. The background includes blooming pink flowers and lush greenery, creating a serene and picturesque environment. The dancer's movements are fluid and expressive, adding to the overall beauty of the scene.</div>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1wM4y187d1_scene_004_cut_004_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-caption">视频展示了一片宁静的森林景象，镜头从一棵树干开始，逐渐向右移动，展现出一片水域和周围的树木。水面平静，反射着天空和周围的树木，显得格外清澈。树木高大茂密，枝叶繁茂，阳光透过树叶洒在地面上，形成斑驳的光影效果。水域周围有一些枯木和倒下的树枝，增加了自然的野趣。整体画面给人一种宁静、自然的感觉。<br>The video captures a serene forest scene with a river flowing through it. The camera pans slowly, revealing tall trees with lush green foliage and some bare branches. The water reflects the surrounding trees, creating a mirror-like effect. Sunlight filters through the leaves, casting dappled shadows on the ground and water. The overall atmosphere is peaceful and natural, with the gentle flow of the river adding to the tranquil ambiance.</div>
+            </div>
+            
+        </div>
+
+        <div class="video-gallery-2">
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1Kq4y1g7LF_scene_005_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1KNNSeHEw3_scene_098_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1aM4y1N7ZX_scene_011_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1mU421d7qj_scene_075_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1RHUkYBEYB_scene_008_cut_014_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV18X4y1C7SH_scene_004_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV14266YNEq5_scene_322_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1Hx411M7DG_scene_003_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+        </div>
+
+        <div class="video-gallery-4">
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV14266YNEq5_scene_262_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1Gy4y1v74S_scene_037_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1L8411m7px_scene_023_cut_006_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1PuZBYeE5c_scene_013_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1E44y1t7Kn_scene_048_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1Zx4y1X7qC_scene_011_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1mU421d7qj_scene_109_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1wU411Z7jB_scene_046_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV143wvegE1H_scene_106_cut_002_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1cx411W7gc_scene_022_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1kotNe7Erh_scene_004_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1Ta4y1L7Mf_scene_017_cut_002_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1rtRNYhE2a_scene_270_cut_005_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1rtRNYhE2a_scene_205_cut_003_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1JxA8eEEpN_scene_058_cut_006_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video autoplay loop muted playsinline>
+                    <source src="visual/BV1PU4y1Q7BF_scene_024_cut_001_cropped.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+        </div>
+        
+        <div class="pipeline-section">
+            <h2>Pipeline</h2>
+            <img src="visual/pipeline.jpg" alt="数据集构建流程" class="pipeline-image">
+            <p>The pipeline of data construction. 
+                First, the selected video will segment by scene and further subdivided into cuts of fix length. 
+                Then, methods such as OCR, border detection, and optical flow estimation are used for quality filtering. 
+                Finally, manual review was carried out and bilingual fine-grained caption was performed using VLM.</p>
+        </div>
+        
+        <div class="stats-section">
+            <div>
+                <h3>Statistical results of video level</h3>
+                <img src="visual/statistics_video_level.jpg" alt="数据集统计1" class="stat-image">
+                <p> Videos with 4K and 1080P resolutions each account for approximately half. The vast majority of videos can only extract a small number of clips due to their short duration and strict filtering.</p>
+            </div>
+            <div>
+                <h3>Statistical results of annotation level</h3>
+                <img src="visual/statistics_annotation_level.jpg" alt="数据集统计2" class="stat-image">
+                <p>The length of bilingual annotations is mostly controlled within a reasonable range. The retention area of safe zone for the vast majority of clips is also above 0.85.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
