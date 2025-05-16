@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xianpan Zhou</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lora', sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            padding-top: 60px;
+            background-color: white;
+            text-align:justify
+        }
+        
+        /* Navigation Bar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #eee;
+        }
+        
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .nav-link {
+            color: #555;
+            text-decoration: none;
+            padding: 5px 15px;
+            margin: 0 5px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 400;
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #2c3e50;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-top: 20px;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+        
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px 0;
+            border: 3px solid #f5f5f5;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            scroll-margin-top: 70px;
+        }
+        
+        .section-title {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            font-size: 1.4em;
+            color: #2c3e50;
+        }
+        
+        .publication {
+            display: flex;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 3px;
+            border: 1px solid #eee;
+            transition: box-shadow 0.3s;
+        }
+        
+        .publication:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .pub-media {
+            flex: 1;
+            min-width: 250px;
+            margin-right: 25px;
+        }
+        
+        .pub-media img, .pub-media video {
+            width: 100%;
+            border-radius: 3px;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .pub-content {
+            flex: 2;
+        }
+        
+        .pub-title {
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        .pub-authors {
+            font-style: italic;
+            margin-bottom: 8px;
+            color: #666;
+        }
+        
+        .pub-venue {
+            margin-bottom: 12px;
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        .pub-links a {
+            display: inline-block;
+            margin-right: 8px;
+            padding: 4px 10px;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 0.85em;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 400;
+            transition: opacity 0.3s;
+        }
+        
+        .pub-links a:hover {
+            opacity: 0.9;
+        }
+        
+        .arxiv-btn {
+            background-color: #b31b1b; /* arXiv red */
+        }
+        
+        .github-btn {
+            background-color: #0366d6; /* GitHub blue */
+        }
+        
+        .project-btn {
+            background-color: #28a745; /* Project green */
+        }
+        
+        .huggingface-btn {
+            background-color: #f8d44e; /* HuggingFace yellow */
+            color: #333;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 70px;
+            color: #999;
+            font-size: 0.9em;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        
+        .contact-info {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#publications" class="nav-link">Publications</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <!-- <img src="assets/photo.jpeg" alt="Your Name" class="profile-img"> -->
+        <h1>Xianpan Zhou</h1>
+    </header>
+
+    <div id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <p>
+            Hello! I am currently a researcher in the Tencent Hunyuan team. 
+            My primary areas of interest in research are multimodal generation and its applications. 
+            I obtained M.S. degrees from Zhejiang University, advised by Professor Xi Li.
+            Prior to that, I obtained my bachelor degree from Sichuan University.
+        </p>
+        <p>
+            Vision plays a significant role in human senses. 
+            My work is dedicated to providing users with better product experiences 
+            in various application scenarios based on the latest cutting-edge research.
+        </p>
+    </div>
+
+    <div id="publications" class="section">
+        <h2 class="section-title">Publications</h2>
+
+        <div class="publication">
+            <div class="pub-media">
+                <video src="assets/tiger200k.mov" autoplay loop muted>
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">Tiger200K: Manually Curated High Visual Quality Video Dataset from UGC Platform</div>
+                <div class="pub-authors">Xianpan Zhou</div>
+                <div class="pub-venue">ArXiv2025</div>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2504.15182" class="arxiv-btn" target="_blank">arXiv</a>
+                    <a href="https://github.com/TinyTigerPan/tiger200k" class="github-btn" target="_blank">GitHub</a>
+                    <a href="https://huggingface.co/collections/tinytigerpan/tiger200k-680b013101d997f97f29c030" class="huggingface-btn" target="_blank">HuggingFace</a>
+                    <a href="https://tinytigerpan.github.io/tiger200k/" class="project-btn" target="_blank">Project Page</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="publication">
+            <div class="pub-media">
+                <img src="assets/realcamvid.jpg">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">RealCam-Vid: High-resolution Video Dataset with Dynamic Scenes and Metric-scale Camera Movements</div>
+                <div class="pub-authors">Guangcong Zheng, Teng Li, Xianpan Zhou, Xi Li</div>
+                <div class="pub-venue">ArXiv2025</div>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2504.08212" class="arxiv-btn" target="_blank">arXiv</a>
+                    <a href="https://github.com/ZGCTroy/RealCam-Vid" class="github-btn" target="_blank">GitHub</a>
+                    <a href="https://huggingface.co/datasets/MuteApo/RealCam-Vid" class="huggingface-btn" target="_blank">HuggingFace</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="publication">
+            <div class="pub-media">
+                <video src="assets/customercrafter.mov" autoplay loop muted>
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">CustomCrafter: Customized Video Generation with Preserving Motion and Concept Composition Abilities</div>
+                <div class="pub-authors">Tao Wu, Yong Zhang†, Xintao Wang, Xianpan Zhou, Guangcong Zheng, Zhongang Qi, Ying Shan, Xi Li†</div>
+                <div class="pub-venue">AAAI2025</div>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2408.13239" class="arxiv-btn" target="_blank">arXiv</a>
+                    <a href="https://github.com/WuTao-CS/CustomCrafter" class="github-btn" target="_blank">GitHub</a>
+                    <a href="https://customcrafter.github.io/" class="project-btn" target="_blank">Project Page</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="publication">
+            <div class="pub-media">
+                <img src="assets/ifa.jpg">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">IFAdapter: Instance Feature Control for Grounded Text-to-Image Generation</div>
+                <div class="pub-authors">Yinwei Wu, Xianpan Zhou, Bing Ma, Xuefeng Su, Kai Ma, Xinchao Wang†</div>
+                <div class="pub-venue">ArXiv2024</div>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2409.08240" class="arxiv-btn" target="_blank">arXiv</a>
+                    <a href="https://ifadapter.github.io/" class="project-btn" target="_blank">Project Page</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="publication">
+            <div class="pub-media">
+                <img src="assets/layoutdiffusion.jpg">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">LayoutDiffusion: Controllable Diffusion Model for Layout-to-image Generation</div>
+                <div class="pub-authors">Guangcong Zheng*, Xianpan Zhou*, Xuewei Li†, Zhongang Qi, Ying Shan, Xi Li†</div>
+                <div class="pub-venue">CVPR2023</div>
+                <div class="pub-links">
+                    <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zheng_LayoutDiffusion_Controllable_Diffusion_Model_for_Layout-to-Image_Generation_CVPR_2023_paper.pdf" class="arxiv-btn" target="_blank">paper</a>
+                    <a href="https://github.com/ZGCTroy/LayoutDiffusion" class="github-btn" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="publication">
+            <div class="pub-media">
+                <img src="assets/bckd.jpg">
+            </div>
+            <div class="pub-content">
+                <div class="pub-title">Bridging Cross-task Protocol Inconsistency for Distillation in Dense Object Detection</div>
+                <div class="pub-authors">Longrong Yang*, Xianpan Zhou*, Xuewei Li, Liang Qiao, Zheyang Li, Ziwei Yang, Gaoang Wang, Xi Li†</div>
+                <div class="pub-venue">ICCV2023</div>
+                <div class="pub-links">
+                    <a href="https://openaccess.thecvf.com/content/ICCV2023/html/Yang_Bridging_Cross-task_Protocol_Inconsistency_for_Distillation_in_Dense_Object_Detection_ICCV_2023_paper.html" class="arxiv-btn" target="_blank">Paper</a>
+                    <a href="https://github.com/TinyTigerPan/BCKD" class="github-btn" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-info">
+            <p>Email: zhouxianpan@vip.qq.com</p>
+            <p>Beijing, China</p>
+            <p>
+                <a href="https://github.com/TinyTigerPan" target="_blank">GitHub</a> | 
+                <a href="https://scholar.google.com/citations?user=N8mK__gAAAAJ" target="_blank">Google Scholar</a>
+            </p>
+        </div>
+    </div>
+
+    
+
+    <footer>
+        &copy; 2025 Xianpan Zhou | Build with DeepSeek v3 | Last updated: May 16, 2025
+    </footer>
+</body>
+</html>
